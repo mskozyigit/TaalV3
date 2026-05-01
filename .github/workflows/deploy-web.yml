@@ -30,6 +30,9 @@ jobs:
       - name: Build web application
         run: ./gradlew :composeApp:jsBrowserProductionWebpack
 
+      - name: List files in publish directory
+        run: ls -R ./composeApp/build/kotlin-webpack/js/productionExecutable
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
