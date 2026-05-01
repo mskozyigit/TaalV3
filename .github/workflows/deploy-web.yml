@@ -31,6 +31,7 @@ jobs:
         run: |
           ./gradlew :composeApp:jsBrowserProductionWebpack
           cp ./composeApp/src/webMain/resources/github-pages-index.html ./composeApp/build/kotlin-webpack/js/productionExecutable/index.html
+          cp ./composeApp/src/webMain/resources/404.html ./composeApp/build/kotlin-webpack/js/productionExecutable/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
