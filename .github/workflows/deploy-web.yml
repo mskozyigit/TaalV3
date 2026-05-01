@@ -32,11 +32,9 @@ jobs:
           ./gradlew :composeApp:jsBrowserProductionWebpack
           cp ./composeApp/src/webMain/resources/github-pages-index.html ./composeApp/build/kotlin-webpack/js/productionExecutable/index.html
 
-      - name: List files in publish directory
-        run: ls -R ./composeApp/build/kotlin-webpack/js/productionExecutable
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./composeApp/build/kotlin-webpack/js/productionExecutable
+          force_orphan: true
