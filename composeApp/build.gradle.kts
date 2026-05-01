@@ -71,10 +71,10 @@ kotlin {
 
     val copyWebResources by tasks.creating(Copy::class) {
         from("src/webMain/resources")
-        into("build/kotlin-webpack/js/productionExecutable")
+        into("build/kotlin-webpack/js/developmentExecutable")
     }
 
-    tasks.named("jsBrowserProductionWebpack") {
+    tasks.named("jsBrowserDevelopmentWebpack") {
         dependsOn(copyWebResources)
     }
 }
