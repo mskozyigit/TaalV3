@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // Get the current path, remove the filename, and append index.html
+        var path = window.location.pathname.split('/').slice(0, -1).join('/') + '/index.html';
+        // Redirect to the index.html
+        window.location.replace(path);
+    </script>
+</head>
+<body>
+</body>
+</html>
