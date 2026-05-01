@@ -64,6 +64,19 @@ kotlin {
             implementation(libs.kotlinx.coroutinesSwing)
         }
     }
+
+    tasks.withType<Copy> {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+
+    val copyWebResources by tasks.creating(Copy::class) {
+        from("src/webMain/resources")
+        into("build/kotlin-webpack/js/productionExecutable")
+    }
+
+    tasks.named("jsBrowserProductionWebpack") {
+        dependsOn(copyWebResources)
+    }
 }
 
 android {
